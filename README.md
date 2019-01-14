@@ -1,13 +1,9 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+**Table of Contents**  *generated with [Dillinger](https://dillinger.io/)*
 
 - [Enable Continuous Integration on Apigee Edge](#enable-continuous-integration-on-apigee-edge)
-- [Install Virtual Box](#install-virtual-box)
-- [Install Jenkins Vagrant Box](#install-jenkins-vagrant-box)
-      - [Optional - Jenkins on Cloudbees](#optional---jenkins-on-cloudbees)
 - [Install Jenkins Plugins](#install-jenkins-plugins)
-      - [Install Plugins with install-jenkins-plugins.sh](#install-plugins-with-install-jenkins-pluginssh)
       - [Hide passwords and sensitive data](#hide-passwords-and-sensitive-data)
 - [Install Maven](#install-maven)
 - [Create a new job](#create-a-new-job)
@@ -16,7 +12,6 @@
 - [Notifications](#notifications)
 - [Jenkins CLI](#jenkins-cli)
 - [Node.js Plugin and Grunt API Plugin ](#nodejs-plugin-and-grunt-api-plugin)
-- [Jenkins on EC2](#jenkins-on-ec2)
 - [Jenkins Pull Request Plugin Setup](#jenkins-pull-request-plugin-setup)
 - [Contributing](#contributing)
 
@@ -24,30 +19,13 @@
 
 Enable Continuous Integration on Apigee Edge
 =====
-The purpose of this repo is to provide a step-by-step guide to enable Apigee Edge bundle deployment on Jenkins for Continuous Integration and Deployment.
-
-Install Virtual Box
-======
-Download [Virtual Box](https://www.virtualbox.org/wiki/Downloads). **This step is required to run Vagrant.**
-
-Install Jenkins Vagrant Box
-======
-run ```vagrant up``` to download and install vagrant box. This box will also execute bootstrap.sh, which contains the command to install git, JRE, JDK and Jenkins. 
-
-#### Optional - Jenkins on Cloudbees
-An alternative to install Jenkins on a Virtual Machine is to leverage services from a cloud provider such as [Cloudbees](http://www.cloudbees.com/). You can signup for free for 200 build minutes. This environment has been tested successfuly so far.
+Hi All, I am Indrajit Patil and The purpose of this repo is to provide a step-by-step guide to enable Apigee Edge bundle deployment on Jenkins for Continuous Integration and Deployment.
+So without wasting time, Let's get started -
 
 Install Jenkins Plugins
 ======
-
-#### Install Plugins with install-jenkins-plugins.sh
-after running ```vagrant ssh``` install Jenkins plugins by running install-jenkins-plugins.sh. This script leverages jenkins-cli, which leverages Jenkins API to install Jenkins plugins from Jenkins dependency management. Plugins include: performance, github, github oauth, jira, email extension, mask-passwords, and node.js.
-```
-cd /vagrant
-./install-jenkins-plugins.sh
-```
-
 #### Hide passwords and sensitive data
+This plugin will help you hide password and other sensitive data which prints on console
 [Mask Passwords Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Mask+Passwords+Plugin) has been installed as part of install-jenkins-plugins.sh. To setup got to Manage Jenkins > Configure System > Mask Passwords - Parameters to automatically mask, Add global passwords. In this case add ae_username and ae_password. These variables will be used from Grunt.js Deploy plugins to deploy bundles to Apigee Edge. Unfortunately, at this point Maven for Jenkins doesn't support Mask Passwords. Alternative solution described below.
 
 Install Maven
@@ -134,10 +112,6 @@ grunt --env=test --debug --username=${ae_username} --password=${ae_password}
 
 For additional directions on enabling a job with Node.js, see this section [here](https://wiki.jenkins-ci.org/display/JENKINS/NodeJS+Plugin#NodeJSPlugin-Usage).
 
-Jenkins on EC2
-========
-Bitnami Jenkins is a pre-configured, ready to run image for running Jenkins on Amazon EC2.  [Amazon EC2 Bitnami](https://aws.amazon.com/marketplace/pp/B008AT8BYK).
-
 Jenkins Pull Request Plugin Setup
 =====
 [This plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+pull+request+builder+plugin) is useful to trigger the execution of a Job when a pull request is created. WIP
@@ -145,5 +119,7 @@ Jenkins Pull Request Plugin Setup
 Contributing
 ======
 If you would like to contribute, simply fork the repository, push your changes to a branch and send a pull request.
+Typo fixes, improvements to grammar or readability, it's all welcome.
 
-Typo fixes, improvements to grammar or readability, it's all welcome.# apigee-test
+Thanks,
+Indrajit patil
