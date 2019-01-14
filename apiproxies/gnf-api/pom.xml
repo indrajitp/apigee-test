@@ -48,6 +48,7 @@
                                 <goal>jmeter</goal>
                             </goals>
                             <configuration>
+								<echo message="Jmeter Testing for test env, This is still in progress - Indrajit Patil"/>
                                 <skipTests>${skipTests}</skipTests> <!-- default true -->
                                 <ignoreResultFailures>true</ignoreResultFailures>
                                 <suppressJMeterOutput>false</suppressJMeterOutput>
