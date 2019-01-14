@@ -52,7 +52,6 @@
                                 <ignoreResultFailures>true</ignoreResultFailures>
                                 <suppressJMeterOutput>false</suppressJMeterOutput>
                                     <propertiesUser>
-										<echo message="Jmeter Testing for test env, This is still in progress - Indrajit Patil"/>
                                         <testData>gnf-api-test.csv</testData>
                                         <threadNum>5</threadNum>
                                         <rampUpPeriodSecs>5</rampUpPeriodSecs>
