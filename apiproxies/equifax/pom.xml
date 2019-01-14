@@ -52,7 +52,7 @@
                                 <ignoreResultFailures>true</ignoreResultFailures>
                                 <suppressJMeterOutput>false</suppressJMeterOutput>
                                     <propertiesUser> 
-                                        <testData>weather_test.csv</testData>
+                                        <testData>equifax-test.csv</testData>
                                         <threadNum>5</threadNum>
                                         <rampUpPeriodSecs>5</rampUpPeriodSecs>
                                         <loopCount>2</loopCount>
@@ -88,7 +88,7 @@
                                 <ignoreResultFailures>true</ignoreResultFailures>
                                 <suppressJMeterOutput>false</suppressJMeterOutput>
                                     <propertiesUser> 
-                                        <testData>weather_prod.csv</testData>
+                                        <testData>equifax-prod.csv</testData>
                                         <threadNum>5</threadNum>
                                         <rampUpPeriodSecs>5</rampUpPeriodSecs>
                                         <loopCount>2</loopCount>

@@ -30,7 +30,7 @@
                     "tokens": [
                         {
                             "xpath": "/TargetEndpoint/HTTPTargetConnection/URL",
-                            "value": "http://weather.yahooapis.com"
+                            "value": "http://api.openweathermap.org/data/2.5/forecast"
                         }
                     ]
                 }
@@ -79,7 +79,7 @@
                     "tokens": [
                         {
                             "xpath": "/TargetEndpoint/HTTPTargetConnection/URL",
-                            "value": "http://weather.yahooapis.com"
+                            "value": "http://mypordendpoint.org/data/2.5/forecast"
                         }
                     ]
                 }

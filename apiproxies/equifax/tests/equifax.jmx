@@ -29,7 +29,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${__P(testData,weather_dev.csv)}</stringProp>
+          <stringProp name="filename">${__P(testData,equifax-test.csv)}</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
@@ -150,7 +150,7 @@
               <idleTime>true</idleTime>
             </value>
           </objProp>
-          <stringProp name="filename">../target/jmeter/results/weather.jtl</stringProp>
+          <stringProp name="filename">../target/jmeter/results/equifax-Test.jtl</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
