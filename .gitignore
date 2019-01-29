@@ -1,5 +1,6 @@
-Vagrant/
-.idea/*
-/.idea
-tools/Vagrant/boxes
-tools/Vagrant/.vagrant
+target
+.idea
+*.iml
+.settings
+.classpath
+.project
