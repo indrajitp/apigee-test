@@ -1,0 +1,28 @@
+node {
+  try {
+    stage('Checkout') {
+      checkout scm
+    }
+    stage('Environment') {
+        sh 'docker -v'
+        registry = 'bitwiseshubhamk/demo-investigator-portal'
+        registryCredential = 'dockerhub'
+        dockerImage = ''
+    }
+    stage('Build Docker Image'){
+      script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        }
+    }
+    stage('Deploy Image') {
+         script {
+            docker.withRegistry( "", registryCredential ) {
+            dockerImage.push()
+          }
+        }
+    }
+  }
+  catch (err) {
+    throw err
+  }
+}
