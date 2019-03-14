@@ -10,8 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                sh """
-	       
-		USER_HOME=$JENKINS_HOME/apiproxies/
+	       	USER_HOME=$JENKINS_HOME/workspace/todelete2/apiproxies/
 		cd $JENKINS_HOME
 		ls -ltr
 		cd -
@@ -19,7 +18,7 @@ pipeline {
 		git diff HEAD^ HEAD| xargs > somefile
 		echo "storing the changes in somefile"
 		cd ${USER_HOME}
-		DIRS=`ls -l $MYDIR | egrep '^d' | awk '{print $9}'`
+		DIRS=`ls -l $MYDIR | egrep '^d' | awk '{print \$9}'`
 		echo $DIRS
 		"""
             }
