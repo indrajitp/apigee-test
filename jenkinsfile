@@ -19,8 +19,8 @@ pipeline {
 		git diff HEAD^ HEAD| xargs > somefile
 		echo "storing the changes in somefile"
 		cd ${USER_HOME}
-		DIRS=`ls -l $MYDIR | egrep '^d' | awk '{print \$9}'`
-		echo $DIRS
+		#DIRS=`ls -l $MYDIR | egrep '^d' | awk '{print \$9}'`
+		#echo $DIRS
 		"""
             }
         }
