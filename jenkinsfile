@@ -18,8 +18,8 @@ pipeline {
 		#check commit differences  between two commits
 		git diff HEAD^ HEAD| xargs > somefile
 		echo "storing the changes in somefile"
+		cat somefile
 		
-		#echo $DIRS
 		"""
             }
         }
