@@ -10,7 +10,8 @@ pipeline {
         stage('Build') {
             steps {
                sh """
-	       	USER_HOME=$JENKINS_HOME/workspace/todelete2/apiproxies/
+	       
+		USER_HOME=$JENKINS_HOME/workspace/todelete2/apiproxies/
 		cd $JENKINS_HOME
 		ls -ltr
 		cd -
@@ -23,9 +24,23 @@ pipeline {
 		"""
             }
         }
-        stage('Test') {
+        stage('Code-Scan') {
             steps {
-                echo 'Testing..'
+				sh """
+                #apigeelint -s apiproxies/$service/apiproxy -f table.js
+				#!/bin/sh
+				apigeelint -s apiproxies/$service/apiproxy -f table.js
+				cd apiproxies/$service
+				echo '*********************************************************'
+				echo '			Java Code Scan using JSLint					'
+				echo '********************************************************* '
+				jslint '**/*.js'
+				"""
+            }
+        }
+		stage('PerformanceTesting') {
+            steps {
+                echo 'Need to add code here for Jmeter testing, As of now Jmeter script is ready'
             }
         }
         stage('Deploy') {
