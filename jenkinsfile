@@ -10,11 +10,7 @@ def call(body)
     pipeline 
 	{
 		agent any
-		tools 
-		{ 
-			maven 'maven' 
-			jdk 'JAVA_HOME' 
-		} 
+		
 		stages 
 		{
 			stage ('Build Creation') 
