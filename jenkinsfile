@@ -11,7 +11,8 @@ pipeline {
             steps {
                sh """
 	       
-		USER_HOME=$JENKINS_HOME/workspace/todelete2/apiproxies/
+		#USER_HOME=$JENKINS_HOME/workspace/todelete2/apiproxies/
+		USER_HOME='/c/jnk/jenkins/workspace/todelete2/apiproxies'
 		cd $JENKINS_HOME
 		ls -ltr
 		cd -
