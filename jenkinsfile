@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-		stage('CheckOutSCM') {
+		stage('CheckOutSourceCode') {
             steps {
                 git 'https://github.com/indrajitp/apigee-test.git'
             }
