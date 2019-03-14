@@ -1,0 +1,48 @@
+import groovy.json.JsonSlurperClassic
+import groovy.json.JsonSlurper
+def call(body) 
+{
+
+    def config = [:]
+    body.resolveStrategy = Closure.DELEGATE_FIRST
+    body.delegate = config
+    body()
+    pipeline 
+	{
+		agent any
+		tools 
+		{ 
+			maven 'maven' 
+			jdk 'JAVA_HOME' 
+		} 
+		stages 
+		{
+			stage ('Build Creation') 
+			{
+				steps 
+				{
+					dir("${WORKSPACE}")
+					{
+						script
+						{
+							checkout([$class: 'GitSCM', branches: [[name: "${RepoBranch}"]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: "${gitcredentials}", url: "${giturl}/datalake-dataflow"]]])
+							  println "-------------------\nCreating a SandboxTag\n-------------------"
+						}	
+					}	
+				}	
+			}
+
+			}
+
+			post 
+			{
+					always 
+					{
+										sh '''
+						rm -rf $WORKSPACE/*
+						'''
+					}
+					
+			}
+	}
+}
