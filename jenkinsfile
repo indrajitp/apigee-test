@@ -27,7 +27,7 @@ pipeline {
         stage('Code-Scan') {
             steps {
 				sh """
-                #apigeelint -s apiproxies/$service/apiproxy -f table.js
+                		#apigeelint -s apiproxies/$service/apiproxy -f table.js
 				#!/bin/sh
 				apigeelint -s apiproxies/$service/apiproxy -f table.js
 				cd apiproxies/$service
@@ -45,7 +45,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'This will be added once i resolve issues of above stages'
             }
         }
     }
