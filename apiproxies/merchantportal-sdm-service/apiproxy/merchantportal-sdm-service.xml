@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="4" name="merchantportal-sdm-service">
+    <Basepaths>/sdm_service</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1549027984781</CreatedAt>
+    <CreatedBy>saikumarreddy.sheru@globalpay.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>SDM_Service</DisplayName>
+    <LastModifiedAt>1552485585552</LastModifiedAt>
+    <LastModifiedBy>saikumarreddy.sheru@globalpay.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:c2ba471ced5e7e4844b2bcf5cb1146f54404406b6aba46945928492d65ccd45881548fdb6268cd05ed6125ca9a968bb56629e6d1a8057727539e58ff0a5444a1</ManifestVersion>
+    <Policies>
+        <Policy>Add-Transaction-Headers</Policy>
+        <Policy>Bad-Request</Policy>
+        <Policy>Data-Power-Key</Policy>
+        <Policy>Extract-header</Policy>
+        <Policy>Invalid-Resource-Fault</Policy>
+        <Policy>Remove-Response-Headers</Policy>
+        <Policy>Security-Policies</Policy>
+        <Policy>Set-JWT-Header</Policy>
+        <Policy>Set-Security</Policy>
+        <Policy>add-cors</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://extractHeader.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>Datapower</TargetEndpoint>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="Add-Transaction-Headers" version="SHA-512:de74e2df2930a9c4cd996c4fc49506c01f9bb73eb2eadc9d45b49e88482a614dd75e97b0a072585939ef831494b344f1f1ee82d3ee4b1e3a14e3c305b83686aa"/>
+        <VersionInfo resourceName="Bad-Request" version="SHA-512:31f7be59a7b7ebe1c1a9f048c07640c5f3674eca111ab6f60ed60804bcacda369a5d4f775fc01f397fc65a506f9ec25c1fa2423f2c566cf072f18d12f44eb323"/>
+        <VersionInfo resourceName="Data-Power-Key" version="SHA-512:f2f2ee528a0a6a46b5301e454b04f147691a4b2b3c83bfd81bb181cddf94a9e45b37d8cc63b0e85e7217eb22d67f5c835edba9f26f049bbd5aa998e1b417974a"/>
+        <VersionInfo resourceName="Extract-header" version="SHA-512:b503a0e04ea1d96813ade121f80b0df6c5cc357dadd22623ff5fbd98812aa7d5624f6bdf3cf766662f49fe3f0693318739ba11f4251508a3162a3163d0e5387f"/>
+        <VersionInfo resourceName="Invalid-Resource-Fault" version="SHA-512:28179f6d5a4542f07421e92b9c9ad4741124a032c5cdd7826d15c586ac05542dce9a0a31df95d79a17d10d5b6b52935b2400d5777799a6fcc2c4040a7e93e192"/>
+        <VersionInfo resourceName="Remove-Response-Headers" version="SHA-512:0fd720d534ca04013dc8791ceb9ee9fa2d3cd5deb6fff68ec5c101ab4823f5c646f66c0d91c849a2836f4a7bae3df449423d4845819586c2bc2d43157aec8f02"/>
+        <VersionInfo resourceName="Security-Policies" version="SHA-512:acb6ff0474e91ca56ccc06ddb979c150ff4f732774eeeef0800c1bbcccbe4e90e574f3ec15273600dcefb61aaeceadcdd697529a55177ff918ac6f49cbbb8ebd"/>
+        <VersionInfo resourceName="Set-JWT-Header" version="SHA-512:472ea766216d1a35ec941c9472ea57298eff53e43c89789aedeeff5ab13c31f57e1f1290c33490274fa200cf279ae2faf072b06b11250b85bef17c9e38845870"/>
+        <VersionInfo resourceName="Set-Security" version="SHA-512:91b7892dc2c09709729fe1caa7a055dc90ecf6cb024beefa83fe7c22b7958941d346bc4408387a280ead05f570a8cd0bf7be1f624417875a3f4757036e4eec76"/>
+        <VersionInfo resourceName="add-cors" version="SHA-512:62d612a5f1e62000b32d520eab07b6946da060feb422085da5f64ce7d864c2ca4104d94e08abd4c247405e2df1093eb3b4cd22d1aa05b25d087903de72e1a527"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:18e366e5455e2873e23d73dbfce0a3916379dab6e3b20a51d1c6b7d861291f471b6dc22f878520fd53bad1e148d135d5e0f87b9ad00ca32e799a83291a4bd278"/>
+    </ProxyEndpoints>
+    <Resources>
+        <VersionInfo resourceName="jsc://extractHeader.js" version="SHA-512:67fa276ec3e5b318fa2d290947351b926cf9b951d109e500a1d1898ba7fe03f725f2dd19a1a4a11963b58512fe968c525f44d1f759e76ffb37a32ac3d625f683"/>
+    </Resources>
+    <SharedFlows/>
+    <TargetEndpoints>
+        <VersionInfo resourceName="Datapower" version="SHA-512:1cd321b01160cae1dfc6a4ef67cb8ad36a0f444ad3bbc74c05a78ccd55568814829bc387d7930f2365fc1c4e32b24861f78be99b6194e470b994c25e7130ea4c"/>
+        <VersionInfo resourceName="default" version="SHA-512:9679411c0755d42e326151b0551e328b2c6ba438c4ab6c9f3bd4948f01111f396c0ad31170233bd08795887565d72464f5af5e1e675a236a41c69c704f6b8721"/>
+    </TargetEndpoints>
+</Manifest>
