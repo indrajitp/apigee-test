@@ -17,12 +17,12 @@ pipeline {
 				sh """
                 		#apigeelint -s apiproxies/$service/apiproxy -f table.js
 				#!/bin/sh
-				apigeelint -s apiproxies/$service/apiproxy -f table.js
-				cd apiproxies/$service
-				echo '*********************************************************'
-				echo '			Java Code Scan using JSLint					'
-				echo '********************************************************* '
-				jslint '**/*.js'
+				#apigeelint -s apiproxies/$service/apiproxy -f table.js
+				#cd apiproxies/$service
+				#echo '*********************************************************'
+				#echo '			Java Code Scan using JSLint					'
+				#echo '********************************************************* '
+				#jslint '**/*.js'
 				"""
             }
         }
