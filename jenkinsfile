@@ -2,27 +2,41 @@ pipeline {
     agent any
 
     stages {
-		stage('CheckOutSourceCode') {
+		stage('CheckoutSCM') {
             steps {
-                git 'https://github.com/indrajitp/apigee-test.git'
+			sh '''
+			 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'e06d2470-28d3-498f-bfcc-5d0173e231d6', url: 'https://ctf.gpn.globalpay.com/gerrit/apigee']]])
+			 '''
             }
         }
         stage('Build') {
             steps {
-               sh "bash build.sh"
+               sh '''
+                            git log -1 | grep -i commit | awk '{print $2}' > latestcommitidfile
+                            if [ `cat latestcommitidfile` == `cat ~/oldcommitidfile` ]
+                            then
+                                touch changed_files
+                            else
+                                git diff HEAD^ HEAD --name-only | awk -F'/' '{print $1}' | grep -vE "solarlint|gitignore|zip|cloud_sql_dumps" | sort -u > changed_files
+                                cat changed_files
+                                cat changed_files > ~/file_to_be_build
+                                cat ~/file_to_be_build
+                                git log -1 | grep -i commit | awk '{print $2}' > ~/oldcommitidfile
+                            fi
+                  '''
             }
         }
         stage('Code-Scan') {
             steps {
 				sh """
-                		#apigeelint -s apiproxies/$service/apiproxy -f table.js
+                #apigeelint -s apiproxies/$service/apiproxy -f table.js
 				#!/bin/sh
-				#apigeelint -s apiproxies/$service/apiproxy -f table.js
-				#cd apiproxies/$service
-				#echo '*********************************************************'
-				#echo '			Java Code Scan using JSLint					'
-				#echo '********************************************************* '
-				#jslint '**/*.js'
+				apigeelint -s apiproxies/$service/apiproxy -f table.js
+				cd apiproxies/$service
+				echo '*********************************************************'
+				echo '			Java Code Scan using JSLint					'
+				echo '********************************************************* '
+				jslint '**/*.js'
 				"""
             }
         }
