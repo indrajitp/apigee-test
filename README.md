@@ -17,7 +17,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-Enable Continuous Integration on Apigee Edge
+Enable Continuous Integration on  Apigee Edge
 =====
 Hi All, I am Indrajit Patil and The purpose of this repo is to provide a step-by-step guide to enable Apigee Edge bundle deployment on Jenkins for Continuous Integration and Deployment.
 So without wasting time, Let's get started -
